@@ -77,3 +77,19 @@
     @apply font-display font-extrabold;
   }
 }
+
+@layer utilities {
+  .header-grid-mobile {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-areas:
+      "logo dark-mode"
+      "grafana grafana"
+      "json-api json-api";
+  }
+  .header-grid-desktop {
+    display: grid;
+    grid-template-columns: 1fr min-content min-content min-content;
+    grid-template-areas: "logo grafana json-api dark-mode";
+  }
+}
