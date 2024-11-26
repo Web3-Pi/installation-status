@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bunx concurrently \"bunx --bun vite\" \"bun run --watch --no-clear-screen server.ts\"",
-    "build": "tsc -b && vite build && bun build --compile --minify --sourcemap --asset-naming=\"[dir]/[name].[ext]\" server.ts dist/**/*.* dist/*.*  --outfile app --target=bun-linux-arm64",
+    "dev": "bunx concurrently \"bunx --bun vite\" \"bun run --watch --no-clear-screen server/entry.ts\"",
+    "build": "tsc -b && vite build && bun build --compile --minify --sourcemap --asset-naming=\"[dir]/[name].[ext]\" server/entry.ts dist/**/*.* dist/*.*  --outfile app --target=bun-linux-arm64",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@tanstack/react-query": "^5.61.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.460.0",

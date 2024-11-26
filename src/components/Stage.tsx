@@ -10,8 +10,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./components/ui/accordion";
-import { Alert, AlertDescription, AlertTitle } from "./components/ui/alert";
+} from "./ui/accordion";
+import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 
 type StageItemProps = {
   name: string;

@@ -1,7 +1,12 @@
 import { AlertCircle, Plug, Unplug } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Stage } from "./Stage";
-import { Alert, AlertTitle, AlertDescription } from "./components/ui/alert";
+import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
+import { useHostname } from "@/hooks/useHostname";
+import { Skeleton } from "./ui/skeleton";
+import { useIp } from "@/hooks/useIp";
+import { useUptime } from "@/hooks/useUptime";
+import { useConnection } from "@/hooks/useConnection";
 
 const STAGES = [
   { number: 0, name: "rc.local - started", status: "done" },
@@ -116,9 +121,13 @@ const STAGES = [
   errorMessage?: string;
 }[];
 
-const CONNECTION_STATUS: "connected" | "disconnected" = "disconnected";
-
 export function Status() {
+  const { data: hostname, isLoading: hostnameLoading } = useHostname();
+  const { data: ip, isLoading: ipLoading } = useIp();
+  const { data: uptime, isLoading: uptimeLoading } = useUptime();
+  const { failureReason } = useConnection();
+  const connectionIsFailing = !!failureReason;
+
   const stages = Object.groupBy(STAGES, (stage) => stage.number);
 
   const stageWithError = STAGES.find((stage) => stage.status === "error");
@@ -130,7 +139,7 @@ export function Status() {
           <CardTitle>Connection status</CardTitle>
         </CardHeader>
         <CardContent>
-          {CONNECTION_STATUS === "connected" ? (
+          {!connectionIsFailing ? (
             <div className="flex gap-1">
               <Plug className="text-green-500" />
               <p className="font-bold text-lg text-green-500">Connected</p>
@@ -155,17 +164,28 @@ export function Status() {
           <CardTitle>Address</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>
+          <p className="flex items-center gap-1">
             Node IP:{" "}
-            <a href="http://192.168.1.100" className="font-bold underline">
-              192.168.1.100
-            </a>
+            {ipLoading ? (
+              <Skeleton className="h-[21px] w-[100px] " />
+            ) : (
+              <a href={`http://${ip}`} className="font-bold underline">
+                {ip}
+              </a>
+            )}
           </p>
-          <p>
+          <p className="flex items-center gap-1">
             Hostname:{" "}
-            <a href="http://eop-1.local" className="font-bold underline">
-              eop-1.local
-            </a>
+            {hostnameLoading ? (
+              <Skeleton className="h-[21px] w-[100px] " />
+            ) : (
+              <a
+                href={`http://${hostname}.local`}
+                className="font-bold underline"
+              >
+                {hostname}
+              </a>
+            )}
           </p>
         </CardContent>
       </Card>
@@ -174,7 +194,11 @@ export function Status() {
           <CardTitle>Uptime</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>1 day, 2 hours, 3 minutes</p>
+          {uptimeLoading ? (
+            <Skeleton className="h-[21px] w-[100px] " />
+          ) : (
+            <p>{uptime}</p>
+          )}
         </CardContent>
       </Card>
 

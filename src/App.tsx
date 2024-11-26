@@ -1,7 +1,7 @@
 import { ExternalLinkIcon, MoonIcon, SunIcon } from "lucide-react";
 import { Button } from "./components/ui/button";
-import { Status } from "./Status";
-import { useDarkMode } from "./useDarkMode";
+import { Status } from "./components/Status";
+import { useDarkMode } from "./hooks/useDarkMode";
 
 const CAN_CONNECT = false;
 
