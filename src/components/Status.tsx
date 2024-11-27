@@ -1,125 +1,13 @@
 import { AlertCircle, Plug, Unplug } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Stage } from "./Stage";
+import { StageAccordion } from "./StageAccordion";
 import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
 import { useHostname } from "@/hooks/useHostname";
 import { Skeleton } from "./ui/skeleton";
 import { useIp } from "@/hooks/useIp";
 import { useUptime } from "@/hooks/useUptime";
 import { useConnection } from "@/hooks/useConnection";
-
-const STAGES = [
-  { number: 0, name: "rc.local - started", status: "done" },
-  { number: 0, name: "Checking internet connection", status: "done" },
-  {
-    number: 0,
-    name: "rc.local - Install essential dependencies",
-    status: "done",
-  },
-  { number: 0, name: "rc.local - time sync with NTP", status: "done" },
-  {
-    number: 0,
-    name: "rc.local - Ethereum-On-Raspberry-Pi repo clone",
-    status: "done",
-  },
-  { number: 1, name: "rc.local - Run installation script", status: "done" },
-  { number: 1, name: "install.sh - start", status: "done" },
-  { number: 1, name: "Clone basic-status-http repository", status: "done" },
-  { number: 1, name: "Configure HTTP status service", status: "done" },
-  {
-    number: 2,
-    name: "Run HTTP status service",
-    status: "error",
-    errorMessage:
-      "Unable to start the HTTP service. Double check that there are no firewall rules preventing the device from accessing the internet.",
-  },
-  { number: 3, name: "stop unattended-upgrades.service", status: "todo" },
-  { number: 3, name: "Firmware Update", status: "todo" },
-  { number: 3, name: "Rebooting after rpi-eeprom-update", status: "todo" },
-  { number: 3, name: "rc.local exit 0", status: "todo" },
-  { number: 3, name: "rc.local - started", status: "todo" },
-  { number: 3, name: "Checking internet connection", status: "todo" },
-  { number: 3, name: "rc.local - Run installation script", status: "todo" },
-  { number: 3, name: "install.sh - start", status: "todo" },
-  { number: 3, name: "Run HTTP status service", status: "todo" },
-  { number: 3, name: "stop unattended-upgrades.service", status: "todo" },
-  { number: 3, name: "time sync with NTP", status: "todo" },
-  { number: 3, name: "Adding Ethereum repositories", status: "todo" },
-  { number: 3, name: "Adding nimbus repositories", status: "todo" },
-  { number: 3, name: "Adding Grafana repositories", status: "todo" },
-  { number: 3, name: "Installing required dependencies", status: "todo" },
-  { number: 3, name: "Looking for a valid drive", status: "todo" },
-  { number: 3, name: "rc.local exit 0", status: "todo" },
-  { number: 3, name: "rc.local - started", status: "todo" },
-  { number: 3, name: "Checking internet connection", status: "todo" },
-  { number: 3, name: "rc.local - Run installation script", status: "todo" },
-  { number: 3, name: "install.sh - start", status: "todo" },
-  { number: 3, name: "Run HTTP status service", status: "todo" },
-  { number: 3, name: "stop unattended-upgrades.service", status: "todo" },
-  { number: 3, name: "time sync with NTP", status: "todo" },
-  { number: 3, name: "Adding Ethereum repositories", status: "todo" },
-  { number: 3, name: "Adding nimbus repositories", status: "todo" },
-  { number: 3, name: "Adding Grafana repositories", status: "todo" },
-  { number: 3, name: "Installing required dependencies", status: "todo" },
-  { number: 3, name: "Looking for a valid drive", status: "todo" },
-  {
-    number: 3,
-    name: "Preparing /dev/nvme0n1 for installation",
-    status: "todo",
-  },
-  { number: 3, name: "ACCOUNT CONFIGURATION", status: "todo" },
-  { number: 3, name: "SWAP SPACE CONFIGURATION", status: "todo" },
-  { number: 3, name: "ETHEREUM INSTALLATION", status: "todo" },
-  { number: 3, name: "MISC CONF STEPS", status: "todo" },
-  { number: 3, name: "Istalling UFW (firewall)", status: "todo" },
-  { number: 3, name: "Configuring UFW (firewall)", status: "todo" },
-  { number: 3, name: "Enable UFW (firewall)", status: "todo" },
-  { number: 3, name: "Installing InfluxDB v1.8.10", status: "todo" },
-  { number: 3, name: "Installing Grafana", status: "todo" },
-  { number: 3, name: "Start Grafana", status: "todo" },
-  { number: 3, name: "SERVICES CONFIGURATION", status: "todo" },
-  { number: 3, name: "CLIENTS CONFIGURATION", status: "todo" },
-  {
-    number: 3,
-    name: "Adding client directories required to run the node",
-    status: "todo",
-  },
-  { number: 3, name: "CONVENIENCE CONFIGURATION", status: "todo" },
-  { number: 3, name: "CLEANUP", status: "todo" },
-  { number: 3, name: "READ CONFIG FROM CONFIG.TXT", status: "todo" },
-  { number: 100, name: "Rebooting...", status: "todo" },
-  { number: 100, name: "rc.local - started", status: "todo" },
-  { number: 100, name: "Checking internet connection", status: "todo" },
-  { number: 100, name: "rc.local - Run installation script", status: "todo" },
-  { number: 100, name: "install.sh - start", status: "todo" },
-  { number: 100, name: "Run HTTP status service", status: "todo" },
-  {
-    number: 100,
-    name: "Not First Run - READ CONFIG FROM CONFIG.TXT",
-    status: "todo",
-  },
-  { number: 100, name: "END install.sh exit 0", status: "todo" },
-  { number: 100, name: "rc.local exit 0", status: "todo" },
-  { number: 100, name: "Installation completed", status: "todo" },
-  { number: 100, name: "rc.local - started", status: "todo" },
-  { number: 100, name: "Checking internet connection", status: "todo" },
-  { number: 100, name: "rc.local - Run installation script", status: "todo" },
-  { number: 100, name: "install.sh - start", status: "todo" },
-  { number: 100, name: "Run HTTP status service", status: "todo" },
-  {
-    number: 100,
-    name: "Not First Run - READ CONFIG FROM CONFIG.TXT",
-    status: "todo",
-  },
-  { number: 100, name: "END install.sh exit 0", status: "todo" },
-  { number: 100, name: "rc.local exit 0", status: "todo" },
-  { number: 100, name: "Installation completed", status: "todo" },
-] as {
-  number: number;
-  name: string;
-  status: "todo" | "done" | "error" | "in-progress";
-  errorMessage?: string;
-}[];
+import { useLogs } from "@/hooks/useLogs";
 
 export function Status() {
   const { data: hostname, isLoading: hostnameLoading } = useHostname();
@@ -128,10 +16,9 @@ export function Status() {
   const { failureReason } = useConnection();
   const connectionIsFailing = !!failureReason;
 
-  const stages = Object.groupBy(STAGES, (stage) => stage.number);
-
-  const stageWithError = STAGES.find((stage) => stage.status === "error");
-
+  const { data: logs } = useLogs();
+  const stageWithError = logs?.find((stage) => stage.status === "error");
+  const installationComplete = logs?.every((stage) => stage.status === "done");
   return (
     <section className="flex flex-col md:grid  grid-cols-3 gap-4 w-full">
       <Card>
@@ -208,10 +95,22 @@ export function Status() {
           <AlertTitle>
             Error during{" "}
             <span className="font-bold">
-              Stage {stageWithError.number}: {stageWithError.name}{" "}
+              Stage {stageWithError.number}: {stageWithError.name}
             </span>
           </AlertTitle>
-          <AlertDescription>{stageWithError.errorMessage}</AlertDescription>
+          <AlertDescription>
+            {stageWithError.logs.at(-1)?.status}
+          </AlertDescription>
+        </Alert>
+      )}
+
+      {installationComplete && (
+        <Alert variant="success" className="col-span-3">
+          <AlertCircle className="h-4 w-4" />
+          <AlertTitle>Installation complete</AlertTitle>
+          <AlertDescription>
+            Installation completed successfully
+          </AlertDescription>
         </Alert>
       )}
 
@@ -220,10 +119,19 @@ export function Status() {
           <CardTitle>Installation progress</CardTitle>
         </CardHeader>
         <CardContent>
-          {Object.entries(stages).map(([key, value]) => {
-            if (!value) return null;
-            return <Stage key={key} number={Number(key)} stages={value} />;
-          })}
+          {logs ? (
+            logs.map((stage) => (
+              <StageAccordion key={stage.number} {...stage} />
+            ))
+          ) : (
+            <div className="flex flex-col items-center gap-[1px]">
+              <Skeleton className="h-[56px] w-full" />
+              <Skeleton className="h-[56px] w-full" />
+              <Skeleton className="h-[56px] w-full" />
+              <Skeleton className="h-[56px] w-full" />
+              <Skeleton className="h-[56px] w-full" />
+            </div>
+          )}
         </CardContent>
       </Card>
     </section>

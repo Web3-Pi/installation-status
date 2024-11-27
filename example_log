@@ -1,0 +1,76 @@
+{"time":"2024-10-30T11:38:14+0100","stage":"0","status":"rc.local - started","level":"INFO"}
+{"time":"2024-10-30T11:38:14+0100","stage":"0","status":"Checking internet connection","level":"INFO"}
+{"time":"2024-10-30T12:38:27+0100","stage":"0","status":"rc.local - Install essential dependencies","level":"INFO"}
+{"time":"2024-11-20T15:17:13+0100","stage":"0","status":"rc.local - time sync with NTP","level":"INFO"}
+{"time":"2024-11-20T15:17:13+0100","stage":"0","status":"rc.local - Ethereum-On-Raspberry-Pi repo clone","level":"INFO"}
+{"time":"2024-11-20T15:17:15+0100","stage":"1","status":"rc.local - Run installation script","level":"INFO"}
+{"time":"2024-11-20T15:17:15+0100","stage":"1","status":"install.sh - start","level":"INFO"}
+{"time":"2024-11-20T15:17:15+0100","stage":"1","status":"Clone basic-status-http repository","level":"INFO"}
+{"time":"2024-11-20T15:17:15+0100","stage":"1","status":"Configure HTTP status service","level":"INFO"}
+{"time":"2024-11-20T15:17:16+0100","stage":"2","status":"Run HTTP status service","level":"INFO"}
+{"time":"2024-11-20T15:17:16+0100","stage":"3","status":"stop unattended-upgrades.service","level":"INFO"}
+{"time":"2024-11-20T15:17:18+0100","stage":"3","status":"Firmware Update","level":"INFO"}
+{"time":"2024-11-20T15:17:18+0100","stage":"3","status":"Rebooting after rpi-eeprom-update","level":"INFO"}
+{"time":"2024-11-20T15:17:28+0100","stage":"3","status":"rc.local exit 0","level":"INFO"}
+{"time":"2024-11-20T15:17:55+0100","stage":"3","status":"rc.local - started","level":"INFO"}
+{"time":"2024-11-20T15:17:55+0100","stage":"3","status":"Checking internet connection","level":"INFO"}
+{"time":"2024-11-20T15:18:01+0100","stage":"3","status":"rc.local - Run installation script","level":"INFO"}
+{"time":"2024-11-20T15:18:01+0100","stage":"3","status":"install.sh - start","level":"INFO"}
+{"time":"2024-11-20T15:18:01+0100","stage":"3","status":"Run HTTP status service","level":"INFO"}
+{"time":"2024-11-20T15:18:01+0100","stage":"3","status":"stop unattended-upgrades.service","level":"INFO"}
+{"time":"2024-11-20T15:18:03+0100","stage":"3","status":"time sync with NTP","level":"INFO"}
+{"time":"2024-11-20T15:18:06+0100","stage":"3","status":"Adding Ethereum repositories","level":"INFO"}
+{"time":"2024-11-20T15:18:20+0100","stage":"3","status":"Adding nimbus repositories","level":"INFO"}
+{"time":"2024-11-20T15:18:20+0100","stage":"3","status":"Adding Grafana repositories","level":"INFO"}
+{"time":"2024-11-20T15:18:21+0100","stage":"3","status":"Installing required dependencies","level":"INFO"}
+{"time":"2024-11-20T15:18:45+0100","stage":"3","status":"Looking for a valid drive","level":"INFO"}
+{"time":"2024-11-20T15:18:46+0100","stage":"3","status":"rc.local exit 0","level":"INFO"}
+{"time":"2024-11-20T15:17:56+0100","stage":"3","status":"rc.local - started","level":"INFO"}
+{"time":"2024-11-20T15:17:57+0100","stage":"3","status":"Checking internet connection","level":"INFO"}
+{"time":"2024-11-20T15:18:03+0100","stage":"3","status":"rc.local - Run installation script","level":"INFO"}
+{"time":"2024-11-20T15:18:03+0100","stage":"3","status":"install.sh - start","level":"INFO"}
+{"time":"2024-11-20T15:18:03+0100","stage":"3","status":"Run HTTP status service","level":"INFO"}
+{"time":"2024-11-20T15:18:03+0100","stage":"3","status":"stop unattended-upgrades.service","level":"INFO"}
+{"time":"2024-11-20T15:18:04+0100","stage":"3","status":"time sync with NTP","level":"INFO"}
+{"time":"2024-11-20T15:18:04+0100","stage":"3","status":"Couldn't find a valid drive","level":"ERROR"}
+{"time":"2024-11-20T15:28:52+0100","stage":"3","status":"Adding Ethereum repositories","level":"INFO"}
+{"time":"2024-11-20T15:29:02+0100","stage":"3","status":"Adding nimbus repositories","level":"INFO"}
+{"time":"2024-11-20T15:29:02+0100","stage":"3","status":"Adding Grafana repositories","level":"INFO"}
+{"time":"2024-11-20T15:29:02+0100","stage":"3","status":"Installing required dependencies","level":"INFO"}
+{"time":"2024-11-20T15:29:06+0100","stage":"3","status":"Looking for a valid drive","level":"INFO"}
+{"time":"2024-11-20T15:29:06+0100","stage":"3","status":"Preparing /dev/nvme0n1 for installation","level":"INFO"}
+{"time":"2024-11-20T15:29:15+0100","stage":"3","status":"ACCOUNT CONFIGURATION","level":"INFO"}
+{"time":"2024-11-20T15:29:16+0100","stage":"3","status":"SWAP SPACE CONFIGURATION","level":"INFO"}
+{"time":"2024-11-20T15:30:04+0100","stage":"3","status":"ETHEREUM INSTALLATION","level":"INFO"}
+{"time":"2024-11-20T15:31:10+0100","stage":"3","status":"MISC CONF STEPS","level":"INFO"}
+{"time":"2024-11-20T15:31:11+0100","stage":"3","status":"Istalling UFW (firewall)","level":"INFO"}
+{"time":"2024-11-20T15:31:12+0100","stage":"3","status":"Configuring UFW (firewall)","level":"INFO"}
+{"time":"2024-11-20T15:31:17+0100","stage":"3","status":"Enable UFW (firewall)","level":"INFO"}
+{"time":"2024-11-20T15:31:18+0100","stage":"3","status":"Installing InfluxDB v1.8.10","level":"INFO"}
+{"time":"2024-11-20T15:31:39+0100","stage":"3","status":"Installing Grafana","level":"INFO"}
+{"time":"2024-11-20T15:32:29+0100","stage":"3","status":"Start Grafana","level":"INFO"}
+{"time":"2024-11-20T15:32:29+0100","stage":"3","status":"SERVICES CONFIGURATION","level":"INFO"}
+{"time":"2024-11-20T15:32:29+0100","stage":"3","status":"CLIENTS CONFIGURATION","level":"INFO"}
+{"time":"2024-11-20T15:32:29+0100","stage":"3","status":"Adding client directories required to run the node","level":"INFO"}
+{"time":"2024-11-20T15:32:29+0100","stage":"3","status":"CONVENIENCE CONFIGURATION","level":"INFO"}
+{"time":"2024-11-20T15:32:39+0100","stage":"3","status":"CLEANUP","level":"INFO"}
+{"time":"2024-11-20T15:32:40+0100","stage":"3","status":"READ CONFIG FROM CONFIG.TXT","level":"INFO"}
+{"time":"2024-11-20T15:32:45+0100","stage":"100","status":"Rebooting...","level":"INFO"}
+{"time":"2024-11-20T15:33:24+0100","stage":"100","status":"rc.local - started","level":"INFO"}
+{"time":"2024-11-20T15:33:24+0100","stage":"100","status":"Checking internet connection","level":"INFO"}
+{"time":"2024-11-20T15:33:31+0100","stage":"100","status":"rc.local - Run installation script","level":"INFO"}
+{"time":"2024-11-20T15:33:31+0100","stage":"100","status":"install.sh - start","level":"INFO"}
+{"time":"2024-11-20T15:33:31+0100","stage":"100","status":"Run HTTP status service","level":"INFO"}
+{"time":"2024-11-20T15:33:31+0100","stage":"100","status":"Not First Run - READ CONFIG FROM CONFIG.TXT","level":"INFO"}
+{"time":"2024-11-20T15:33:50+0100","stage":"100","status":"END install.sh exit 0","level":"INFO"}
+{"time":"2024-11-20T15:33:51+0100","stage":"100","status":"rc.local exit 0","level":"INFO"}
+{"time":"2024-11-20T15:33:51+0100","stage":"100","status":"Installation completed","level":"INFO"}
+{"time":"2024-11-20T15:33:24+0100","stage":"100","status":"rc.local - started","level":"INFO"}
+{"time":"2024-11-20T15:33:24+0100","stage":"100","status":"Checking internet connection","level":"INFO"}
+{"time":"2024-11-20T15:33:30+0100","stage":"100","status":"rc.local - Run installation script","level":"INFO"}
+{"time":"2024-11-20T15:33:30+0100","stage":"100","status":"install.sh - start","level":"INFO"}
+{"time":"2024-11-20T15:33:30+0100","stage":"100","status":"Run HTTP status service","level":"INFO"}
+{"time":"2024-11-20T15:33:30+0100","stage":"100","status":"Not First Run - READ CONFIG FROM CONFIG.TXT","level":"INFO"}
+{"time":"2024-11-20T16:01:57+0100","stage":"100","status":"END install.sh exit 0","level":"INFO"}
+{"time":"2024-11-20T16:01:57+0100","stage":"100","status":"rc.local exit 0","level":"INFO"}
+{"time":"2024-11-20T16:01:57+0100","stage":"100","status":"Installation completed","level":"INFO"}
