@@ -1,5 +1,4 @@
 import { fetchApi } from "@/lib/api";
-import { secondsToHumanReadable } from "@/lib/time";
 import { useQuery } from "@tanstack/react-query";
 
 export function useUptime() {
@@ -8,7 +7,7 @@ export function useUptime() {
     queryFn: async () => {
       const response = await fetchApi("/uptime");
       const json = await response.json();
-      return secondsToHumanReadable(Math.floor(json.uptime));
+      return Math.floor(json.uptime);
     },
   });
 }

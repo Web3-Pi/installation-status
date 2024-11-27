@@ -33,7 +33,8 @@ This will first build the web application to static html js and css files, and t
 To start the application run:
 
 ```bash
-PORT=80 ./app
+PORT=80 LOG_FILE=/path/to/status.log ./app
 ```
 
 If port is not specified it will default to `3000`
+If LOG_FILE is not specified the /log endpoint will throw a 500 error

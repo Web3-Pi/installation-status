@@ -8,11 +8,12 @@ import { useIp } from "@/hooks/useIp";
 import { useUptime } from "@/hooks/useUptime";
 import { useConnection } from "@/hooks/useConnection";
 import { useLogs } from "@/hooks/useLogs";
+import { secondsToHumanReadable } from "@/lib/time";
 
 export function Status() {
   const { data: hostname, isLoading: hostnameLoading } = useHostname();
   const { data: ip, isLoading: ipLoading } = useIp();
-  const { data: uptime, isLoading: uptimeLoading } = useUptime();
+  const { data: uptime } = useUptime();
   const { failureReason } = useConnection();
   const connectionIsFailing = !!failureReason;
 
@@ -81,10 +82,10 @@ export function Status() {
           <CardTitle>Uptime</CardTitle>
         </CardHeader>
         <CardContent>
-          {uptimeLoading ? (
+          {!uptime ? (
             <Skeleton className="h-[21px] w-[100px] " />
           ) : (
-            <p>{uptime}</p>
+            <p>{secondsToHumanReadable(uptime)}</p>
           )}
         </CardContent>
       </Card>
@@ -109,7 +110,8 @@ export function Status() {
           <AlertCircle className="h-4 w-4" />
           <AlertTitle>Installation complete</AlertTitle>
           <AlertDescription>
-            Installation completed successfully
+            Installation completed successfully. The Grafana dashboard and JSON
+            API will be available in a few minutes.
           </AlertDescription>
         </Alert>
       )}

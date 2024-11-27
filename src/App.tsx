@@ -1,9 +1,9 @@
-import { ExternalLinkIcon, MoonIcon, SunIcon } from "lucide-react";
+import { MoonIcon, SunIcon } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Status } from "./components/Status";
 import { useDarkMode } from "./hooks/useDarkMode";
-
-const CAN_CONNECT = false;
+import { GrafanaButton } from "./components/GrafanaButton";
+import { JsonApiButton } from "./components/JsonApiButton";
 
 function App() {
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -25,14 +25,8 @@ function App() {
               alt="web3pi logo"
             />
           </a>
-          <Button disabled={!CAN_CONNECT} className="[grid-area:grafana]">
-            {CAN_CONNECT ? "Grafana" : "Grafana not available"}
-            <ExternalLinkIcon />
-          </Button>
-          <Button disabled={!CAN_CONNECT} className="[grid-area:json-api]">
-            {CAN_CONNECT ? "JSON API" : "JSON API not available"}
-            <ExternalLinkIcon />
-          </Button>
+          <GrafanaButton className="[grid-area:grafana]" />
+          <JsonApiButton className="[grid-area:json-api]" />
           <Button onClick={toggleDarkMode} className="[grid-area:dark-mode]">
             {darkMode ? <SunIcon /> : <MoonIcon />}
           </Button>
