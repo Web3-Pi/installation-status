@@ -19,7 +19,7 @@ export function GrafanaButton({
     );
   }
   return (
-    <a href={`http://${ip}:3000/dashboards`} target="_blank">
+    <a href={`http://${ip}:3000/d/web3piv2p6eiob/`} target="_blank">
       <Button {...props}>
         Grafana
         <ExternalLinkIcon />
