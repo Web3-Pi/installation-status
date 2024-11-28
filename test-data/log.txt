@@ -1,0 +1,466 @@
+[2024-10-30 11:38:14 UTC] - 
+[2024-10-30 11:38:14 UTC] - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START
+[2024-10-30 11:38:14 UTC] - 
+[2024-10-30 11:38:14 UTC] - Local time: Wed 2024-10-30 11:38:14 UTC
+[2024-10-30 11:38:14 UTC] - Universal time: Wed 2024-10-30 11:38:14 UTC
+[2024-10-30 11:38:14 UTC] - RTC time: Thu 1970-01-01 00:00:26
+[2024-10-30 11:38:14 UTC] - Time zone: Etc/UTC (UTC, +0000)
+[2024-10-30 11:38:14 UTC] - System clock synchronized: no
+[2024-10-30 11:38:14 UTC] - NTP service: active
+[2024-10-30 11:38:14 UTC] - RTC in local TZ: no
+[2024-10-30 11:38:14 UTC] - /root/.install_stage not exist
+[2024-10-30 11:38:14 UTC] - /root/.install_stage file created and initialized to 0
+[2024-10-30 11:38:14 UTC] - 
+[2024-10-30 11:38:14 UTC] - STAGE 0: rc.local - started
+[2024-10-30 11:38:14 UTC] - 
+[2024-10-30 11:38:14 UTC] - 
+[2024-10-30 11:38:14 UTC] - STAGE 0: Checking internet connection
+[2024-10-30 11:38:14 UTC] - 
+[2024-10-30 11:38:14 UTC] - [1A[K Wed Oct 30 11:38:14 UTC 2024: test connection [0/10] - github.com
+[2024-10-30 12:38:20 CET] - [1A[K Wed Oct 30 12:38:20 CET 2024: test connection [1/10] - github.com
+[2024-10-30 12:38:27 CET] - Wed Oct 30 12:38:27 CET 2024: Connected - github.com
+[2024-10-30 12:38:27 CET] - 
+[2024-10-30 12:38:27 CET] - STAGE 0: rc.local - Install essential dependencies
+[2024-10-30 12:38:27 CET] - 
+[2024-11-20 15:17:13 CET] - 
+[2024-11-20 15:17:13 CET] - STAGE 0: rc.local - time sync with NTP
+[2024-11-20 15:17:13 CET] - 
+[2024-11-20 15:17:13 CET] - Local time: Wed 2024-11-20 15:17:13 CET
+[2024-11-20 15:17:13 CET] - Universal time: Wed 2024-11-20 14:17:13 UTC
+[2024-11-20 15:17:13 CET] - RTC time: Wed 2024-11-20 14:17:13
+[2024-11-20 15:17:13 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:17:13 CET] - System clock synchronized: yes
+[2024-11-20 15:17:13 CET] - NTP service: active
+[2024-11-20 15:17:13 CET] - RTC in local TZ: no
+[2024-11-20 15:17:13 CET] - 
+[2024-11-20 15:17:13 CET] - STAGE 0: rc.local - Ethereum-On-Raspberry-Pi repo clone
+[2024-11-20 15:17:13 CET] - 
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - STAGE 1: rc.local - Run installation script
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - Local time: Wed 2024-11-20 15:17:15 CET
+[2024-11-20 15:17:15 CET] - Universal time: Wed 2024-11-20 14:17:15 UTC
+[2024-11-20 15:17:15 CET] - RTC time: Wed 2024-11-20 14:17:15
+[2024-11-20 15:17:15 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:17:15 CET] - System clock synchronized: yes
+[2024-11-20 15:17:15 CET] - NTP service: active
+[2024-11-20 15:17:15 CET] - RTC in local TZ: no
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - STAGE 1: install.sh - start
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - STAGE 1: Clone basic-status-http repository
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:15 CET] - STAGE 1: Configure HTTP status service
+[2024-11-20 15:17:15 CET] - 
+[2024-11-20 15:17:16 CET] - 
+[2024-11-20 15:17:16 CET] - STAGE 2: Run HTTP status service
+[2024-11-20 15:17:16 CET] - 
+[2024-11-20 15:17:16 CET] - 
+[2024-11-20 15:17:16 CET] - STAGE 3: stop unattended-upgrades.service
+[2024-11-20 15:17:16 CET] - 
+[2024-11-20 15:17:18 CET] - 
+[2024-11-20 15:17:18 CET] - STAGE 3: Firmware Update
+[2024-11-20 15:17:18 CET] - 
+[2024-11-20 15:17:18 CET] - 
+[2024-11-20 15:17:18 CET] - STAGE 3: Rebooting after rpi-eeprom-update
+[2024-11-20 15:17:18 CET] - 
+[2024-11-20 15:17:28 CET] - 
+[2024-11-20 15:17:28 CET] - STAGE 3: rc.local exit 0
+[2024-11-20 15:17:28 CET] - 
+[2024-11-20 15:17:55 CET] - 
+[2024-11-20 15:17:55 CET] - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START
+[2024-11-20 15:17:55 CET] - 
+[2024-11-20 15:17:55 CET] - Local time: Wed 2024-11-20 15:17:55 CET
+[2024-11-20 15:17:55 CET] - Universal time: Wed 2024-11-20 14:17:55 UTC
+[2024-11-20 15:17:55 CET] - RTC time: Wed 2024-11-20 14:17:56
+[2024-11-20 15:17:55 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:17:55 CET] - System clock synchronized: no
+[2024-11-20 15:17:55 CET] - NTP service: active
+[2024-11-20 15:17:55 CET] - RTC in local TZ: no
+[2024-11-20 15:17:55 CET] - 
+[2024-11-20 15:17:55 CET] - STAGE 3: rc.local - started
+[2024-11-20 15:17:55 CET] - 
+[2024-11-20 15:17:55 CET] - 
+[2024-11-20 15:17:55 CET] - STAGE 3: Checking internet connection
+[2024-11-20 15:17:55 CET] - 
+[2024-11-20 15:17:55 CET] - [1A[K Wed Nov 20 15:17:55 CET 2024: test connection [0/10] - github.com
+[2024-11-20 15:18:01 CET] - Wed Nov 20 15:18:01 CET 2024: Connected - github.com
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - STAGE 3: rc.local - Run installation script
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - Local time: Wed 2024-11-20 15:18:01 CET
+[2024-11-20 15:18:01 CET] - Universal time: Wed 2024-11-20 14:18:01 UTC
+[2024-11-20 15:18:01 CET] - RTC time: Wed 2024-11-20 14:18:02
+[2024-11-20 15:18:01 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:18:01 CET] - System clock synchronized: no
+[2024-11-20 15:18:01 CET] - NTP service: active
+[2024-11-20 15:18:01 CET] - RTC in local TZ: no
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - STAGE 3: install.sh - start
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - STAGE 3: Run HTTP status service
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:01 CET] - STAGE 3: stop unattended-upgrades.service
+[2024-11-20 15:18:01 CET] - 
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - STAGE 3: time sync with NTP
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - Local time: Wed 2024-11-20 15:18:03 CET
+[2024-11-20 15:18:03 CET] - Universal time: Wed 2024-11-20 14:18:03 UTC
+[2024-11-20 15:18:03 CET] - RTC time: Wed 2024-11-20 14:18:04
+[2024-11-20 15:18:03 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:18:03 CET] - System clock synchronized: no
+[2024-11-20 15:18:03 CET] - NTP service: active
+[2024-11-20 15:18:03 CET] - RTC in local TZ: no
+[2024-11-20 15:18:06 CET] - 
+[2024-11-20 15:18:06 CET] - STAGE 3: Adding Ethereum repositories
+[2024-11-20 15:18:06 CET] - 
+[2024-11-20 15:18:20 CET] - 
+[2024-11-20 15:18:20 CET] - STAGE 3: Adding nimbus repositories
+[2024-11-20 15:18:20 CET] - 
+[2024-11-20 15:18:20 CET] - 
+[2024-11-20 15:18:20 CET] - STAGE 3: Adding Grafana repositories
+[2024-11-20 15:18:20 CET] - 
+[2024-11-20 15:18:21 CET] - 
+[2024-11-20 15:18:21 CET] - STAGE 3: Installing required dependencies
+[2024-11-20 15:18:21 CET] - 
+[2024-11-20 15:18:45 CET] - 
+[2024-11-20 15:18:45 CET] - STAGE 3: Looking for a valid drive
+[2024-11-20 15:18:45 CET] - 
+[2024-11-20 15:18:45 CET] - No suitable disk found
+[2024-11-20 15:18:45 CET] - terminateScript()
+[2024-11-20 15:18:45 CET] - 
+[2024-11-20 15:18:46 CET] - STAGE 3: rc.local exit 0
+[2024-11-20 15:18:46 CET] - 
+[2024-11-20 15:17:56 CET] - 
+[2024-11-20 15:17:56 CET] - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START
+[2024-11-20 15:17:56 CET] - 
+[2024-11-20 15:17:56 CET] - Local time: Wed 2024-11-20 15:17:56 CET
+[2024-11-20 15:17:56 CET] - Universal time: Wed 2024-11-20 14:17:56 UTC
+[2024-11-20 15:17:56 CET] - RTC time: Thu 1970-01-01 00:00:24
+[2024-11-20 15:17:56 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:17:56 CET] - System clock synchronized: no
+[2024-11-20 15:17:56 CET] - NTP service: active
+[2024-11-20 15:17:56 CET] - RTC in local TZ: no
+[2024-11-20 15:17:56 CET] - 
+[2024-11-20 15:17:56 CET] - STAGE 3: rc.local - started
+[2024-11-20 15:17:57 CET] - 
+[2024-11-20 15:17:57 CET] - 
+[2024-11-20 15:17:57 CET] - STAGE 3: Checking internet connection
+[2024-11-20 15:17:57 CET] - 
+[2024-11-20 15:17:57 CET] - [1A[K Wed Nov 20 15:17:57 CET 2024: test connection [0/10] - github.com
+[2024-11-20 15:18:03 CET] - Wed Nov 20 15:18:03 CET 2024: Connected - github.com
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - STAGE 3: rc.local - Run installation script
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - Local time: Wed 2024-11-20 15:18:03 CET
+[2024-11-20 15:18:03 CET] - Universal time: Wed 2024-11-20 14:18:03 UTC
+[2024-11-20 15:18:03 CET] - RTC time: Thu 1970-01-01 00:00:30
+[2024-11-20 15:18:03 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:18:03 CET] - System clock synchronized: no
+[2024-11-20 15:18:03 CET] - NTP service: active
+[2024-11-20 15:18:03 CET] - RTC in local TZ: no
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - STAGE 3: install.sh - start
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - STAGE 3: Run HTTP status service
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:03 CET] - STAGE 3: stop unattended-upgrades.service
+[2024-11-20 15:18:03 CET] - 
+[2024-11-20 15:18:04 CET] - 
+[2024-11-20 15:18:04 CET] - STAGE 3: time sync with NTP
+[2024-11-20 15:18:04 CET] - 
+[2024-11-20 15:18:04 CET] - Local time: Wed 2024-11-20 15:18:04 CET
+[2024-11-20 15:18:04 CET] - Universal time: Wed 2024-11-20 14:18:04 UTC
+[2024-11-20 15:18:04 CET] - RTC time: Thu 1970-01-01 00:00:32
+[2024-11-20 15:18:04 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:18:04 CET] - System clock synchronized: no
+[2024-11-20 15:18:04 CET] - NTP service: active
+[2024-11-20 15:18:04 CET] - RTC in local TZ: no
+[2024-11-20 15:28:52 CET] - 
+[2024-11-20 15:28:52 CET] - STAGE 3: Adding Ethereum repositories
+[2024-11-20 15:28:52 CET] - 
+[2024-11-20 15:29:02 CET] - 
+[2024-11-20 15:29:02 CET] - STAGE 3: Adding nimbus repositories
+[2024-11-20 15:29:02 CET] - 
+[2024-11-20 15:29:02 CET] - 
+[2024-11-20 15:29:02 CET] - STAGE 3: Adding Grafana repositories
+[2024-11-20 15:29:02 CET] - 
+[2024-11-20 15:29:02 CET] - 
+[2024-11-20 15:29:02 CET] - STAGE 3: Installing required dependencies
+[2024-11-20 15:29:02 CET] - 
+[2024-11-20 15:29:06 CET] - 
+[2024-11-20 15:29:06 CET] - STAGE 3: Looking for a valid drive
+[2024-11-20 15:29:06 CET] - 
+[2024-11-20 15:29:06 CET] - W3P_DRIVE=/dev/nvme0n1
+[2024-11-20 15:29:06 CET] - 
+[2024-11-20 15:29:06 CET] - STAGE 3: Preparing /dev/nvme0n1 for installation
+[2024-11-20 15:29:06 CET] - 
+[2024-11-20 15:29:06 CET] - /dev/nvme0n1 contains 0 partitions (exactly one allowed). Formating.
+[2024-11-20 15:29:06 CET] - Creating new partition and formatting disk: /dev/nvme0n1...
+[2024-11-20 15:29:15 CET] - Removing FS reserved blocks on partion /dev/nvme0n1p1
+[2024-11-20 15:29:15 CET] - Mounting /dev/nvme0n1p1 as /mnt/storage
+[2024-11-20 15:29:15 CET] - 
+[2024-11-20 15:29:15 CET] - STAGE 3: ACCOUNT CONFIGURATION
+[2024-11-20 15:29:15 CET] - 
+[2024-11-20 15:29:15 CET] - Creating ethereum user
+[2024-11-20 15:29:16 CET] - 
+[2024-11-20 15:29:16 CET] - STAGE 3: SWAP SPACE CONFIGURATION
+[2024-11-20 15:29:16 CET] - 
+[2024-11-20 15:30:04 CET] - 
+[2024-11-20 15:30:04 CET] - STAGE 3: ETHEREUM INSTALLATION
+[2024-11-20 15:30:04 CET] - 
+[2024-11-20 15:30:04 CET] - Installing Ethereum packages
+[2024-11-20 15:31:08 CET] - Downloading Lighthouse URL: https://github.com/sigp/lighthouse/releases/download/v5.3.0/lighthouse-v5.3.0-aarch64-unknown-linux-gnu.tar.gz
+[2024-11-20 15:31:10 CET] - 
+[2024-11-20 15:31:10 CET] - STAGE 3: MISC CONF STEPS
+[2024-11-20 15:31:10 CET] - 
+[2024-11-20 15:31:11 CET] - 
+[2024-11-20 15:31:11 CET] - STAGE 3: Istalling UFW (firewall)
+[2024-11-20 15:31:11 CET] - 
+[2024-11-20 15:31:12 CET] - 
+[2024-11-20 15:31:12 CET] - STAGE 3: Configuring UFW (firewall)
+[2024-11-20 15:31:12 CET] - 
+[2024-11-20 15:31:17 CET] - 
+[2024-11-20 15:31:17 CET] - STAGE 3: Enable UFW (firewall)
+[2024-11-20 15:31:17 CET] - 
+[2024-11-20 15:31:18 CET] - Status: active
+[2024-11-20 15:31:18 CET] - Logging: on (low)
+[2024-11-20 15:31:18 CET] - Default: deny (incoming), allow (outgoing), disabled (routed)
+[2024-11-20 15:31:18 CET] - New profiles: skip
+[2024-11-20 15:31:18 CET] - 
+[2024-11-20 15:31:18 CET] - To                         Action      From
+[2024-11-20 15:31:18 CET] - --                         ------      ----
+[2024-11-20 15:31:18 CET] - 22/tcp                     ALLOW IN    Anywhere                   # SSH
+[2024-11-20 15:31:18 CET] - 30303/tcp                  ALLOW IN    Anywhere                   # Geth: peer-to-peer (P2P) communication
+[2024-11-20 15:31:18 CET] - 30303/udp                  ALLOW IN    Anywhere                   # Geth: peer-to-peer (P2P) communication
+[2024-11-20 15:31:18 CET] - 8545/tcp                   ALLOW IN    Anywhere                   # Geth: JSON-RPC server (HTTP)
+[2024-11-20 15:31:18 CET] - 8546/tcp                   ALLOW IN    Anywhere                   # Geth: WebSocket server
+[2024-11-20 15:31:18 CET] - 8551/tcp                   ALLOW IN    Anywhere                   # Geth: Engine API, enabling communication between the execution and consensus layers
+[2024-11-20 15:31:18 CET] - 9000/tcp                   ALLOW IN    Anywhere                   # Lighthouse: HTTP REST API
+[2024-11-20 15:31:18 CET] - 9000/udp                   ALLOW IN    Anywhere                   # Nimbus/Lighthouse: peer-to-peer (P2P) communication
+[2024-11-20 15:31:18 CET] - 3000/tcp                   ALLOW IN    Anywhere                   # Grafana: web interface
+[2024-11-20 15:31:18 CET] - 80/tcp                     ALLOW IN    Anywhere                   # basic-status-http: web interface
+[2024-11-20 15:31:18 CET] - 7197/tcp                   ALLOW IN    Anywhere                   # basic-system-monitor: JSON
+[2024-11-20 15:31:18 CET] - 5353/udp                   ALLOW IN    Anywhere                   # avahi-daemon: mDNS
+[2024-11-20 15:31:18 CET] - 22/tcp (v6)                ALLOW IN    Anywhere (v6)              # SSH
+[2024-11-20 15:31:18 CET] - 30303/tcp (v6)             ALLOW IN    Anywhere (v6)              # Geth: peer-to-peer (P2P) communication
+[2024-11-20 15:31:18 CET] - 30303/udp (v6)             ALLOW IN    Anywhere (v6)              # Geth: peer-to-peer (P2P) communication
+[2024-11-20 15:31:18 CET] - 8545/tcp (v6)              ALLOW IN    Anywhere (v6)              # Geth: JSON-RPC server (HTTP)
+[2024-11-20 15:31:18 CET] - 8546/tcp (v6)              ALLOW IN    Anywhere (v6)              # Geth: WebSocket server
+[2024-11-20 15:31:18 CET] - 8551/tcp (v6)              ALLOW IN    Anywhere (v6)              # Geth: Engine API, enabling communication between the execution and consensus layers
+[2024-11-20 15:31:18 CET] - 9000/tcp (v6)              ALLOW IN    Anywhere (v6)              # Lighthouse: HTTP REST API
+[2024-11-20 15:31:18 CET] - 9000/udp (v6)              ALLOW IN    Anywhere (v6)              # Nimbus/Lighthouse: peer-to-peer (P2P) communication
+[2024-11-20 15:31:18 CET] - 3000/tcp (v6)              ALLOW IN    Anywhere (v6)              # Grafana: web interface
+[2024-11-20 15:31:18 CET] - 80/tcp (v6)                ALLOW IN    Anywhere (v6)              # basic-status-http: web interface
+[2024-11-20 15:31:18 CET] - 7197/tcp (v6)              ALLOW IN    Anywhere (v6)              # basic-system-monitor: JSON
+[2024-11-20 15:31:18 CET] - 5353/udp (v6)              ALLOW IN    Anywhere (v6)              # avahi-daemon: mDNS
+[2024-11-20 15:31:18 CET] - 
+[2024-11-20 15:31:18 CET] - 
+[2024-11-20 15:31:18 CET] - STAGE 3: Installing InfluxDB v1.8.10
+[2024-11-20 15:31:18 CET] - 
+[2024-11-20 15:31:39 CET] - 
+[2024-11-20 15:31:39 CET] - STAGE 3: Installing Grafana
+[2024-11-20 15:31:39 CET] - 
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - STAGE 3: Start Grafana
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - STAGE 3: SERVICES CONFIGURATION
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - STAGE 3: CLIENTS CONFIGURATION
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - Configuring clients run scripts
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - STAGE 3: Adding client directories required to run the node
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - Adding client directories required to run the node
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - STAGE 3: CONVENIENCE CONFIGURATION
+[2024-11-20 15:32:29 CET] - 
+[2024-11-20 15:32:29 CET] - Setting up a colored prompt
+[2024-11-20 15:32:29 CET] - basic-system-monitor venv conf
+[2024-11-20 15:32:34 CET] - basic-eth2-node-monitor venv conf
+[2024-11-20 15:32:39 CET] - 
+[2024-11-20 15:32:39 CET] - STAGE 3: CLEANUP
+[2024-11-20 15:32:39 CET] - 
+[2024-11-20 15:32:39 CET] - defUserName=raspberry
+[2024-11-20 15:32:40 CET] - 
+[2024-11-20 15:32:40 CET] - STAGE 3: READ CONFIG FROM CONFIG.TXT
+[2024-11-20 15:32:40 CET] - 
+[2024-11-20 15:32:40 CET] - Read custom settings from /boot/firmware/config.txt - [Web3Pi] tag
+[2024-11-20 15:32:40 CET] - Service config: Enable influxdb.service
+[2024-11-20 15:32:40 CET] - Service config: Enable grafana-server.service
+[2024-11-20 15:32:42 CET] - Service config: Enable w3p_bsm.service
+[2024-11-20 15:32:42 CET] - Service config: Enable w3p_bnm.service
+[2024-11-20 15:32:43 CET] - Service config: Enable w3p_geth.service
+[2024-11-20 15:32:44 CET] - Service config: Disable w3p_lighthouse-beacon.service
+[2024-11-20 15:32:44 CET] - Service config: Enable w3p_nimbus-beacon.service
+[2024-11-20 15:32:45 CET] - 
+[2024-11-20 15:32:45 CET] - STAGE 100: Rebooting...
+[2024-11-20 15:32:45 CET] - 
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START
+[2024-11-20 15:33:24 CET] - Checking internet connection
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - Checking internet connection
+[2024-11-20 15:33:24 CET] - [1A[K Wed Nov 20 15:33:24 CET 2024: test connection [0/10] - github.com
+[2024-11-20 15:33:24 CET] - -e \e[1A\e[K Wed Nov 20 15:33:24 CET 2024: test connection [0/10] - github.com
+[2024-11-20 15:33:24 CET] - Local time: Wed 2024-11-20 15:33:24 CET
+[2024-11-20 15:33:24 CET] - Universal time: Wed 2024-11-20 14:33:24 UTC
+[2024-11-20 15:33:24 CET] - RTC time: Wed 2024-11-20 14:33:25
+[2024-11-20 15:33:24 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:33:24 CET] - System clock synchronized: no
+[2024-11-20 15:33:24 CET] - NTP service: active
+[2024-11-20 15:33:24 CET] - RTC in local TZ: no
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - STAGE 100: rc.local - started
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - STAGE 100: Checking internet connection
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - [1A[K Wed Nov 20 15:33:24 CET 2024: test connection [0/10] - github.com
+[2024-11-20 15:33:30 CET] - [2024-11-20 15:33:30 CET] - Wed Nov 20 15:33:30 CET 2024: Connected - github.com
+Wed Nov 20 15:33:30 CET 2024: Connected - github.com
+[2024-11-20 15:33:30 CET] - [2024-11-20 15:33:30 CET] - geth_port = 30303
+exec_url = http://localhost:8551
+[2024-11-20 15:33:30 CET] - nimbus_port = 9000
+[2024-11-20 15:33:30 CET] - Run Geth
+[2024-11-20 15:33:30 CET] - nimbus_dir = /mnt/storage/.nimbus/data/shared_mainnet_0
+[2024-11-20 15:33:31 CET] - Wed Nov 20 15:33:31 CET 2024: Connected - github.com
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - STAGE 100: rc.local - Run installation script
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - Local time: Wed 2024-11-20 15:33:31 CET
+[2024-11-20 15:33:31 CET] - Universal time: Wed 2024-11-20 14:33:31 UTC
+[2024-11-20 15:33:31 CET] - RTC time: Wed 2024-11-20 14:33:32
+[2024-11-20 15:33:31 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:33:31 CET] - System clock synchronized: no
+[2024-11-20 15:33:31 CET] - NTP service: active
+[2024-11-20 15:33:31 CET] - RTC in local TZ: no
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - STAGE 100: install.sh - start
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - STAGE 100: Run HTTP status service
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - STAGE 100: Not First Run - READ CONFIG FROM CONFIG.TXT
+[2024-11-20 15:33:31 CET] - 
+[2024-11-20 15:33:31 CET] - Read custom settings from /boot/firmware/config.txt - [Web3Pi] tag
+[2024-11-20 15:33:31 CET] - Service config: Enable influxdb.service
+[2024-11-20 15:33:39 CET] - Service config: Enable grafana-server.service
+[2024-11-20 15:33:43 CET] - Service config: Enable w3p_bsm.service
+[2024-11-20 15:33:44 CET] - Service config: Enable w3p_bnm.service
+[2024-11-20 15:33:45 CET] - Service config: Enable w3p_geth.service
+[2024-11-20 15:33:46 CET] - Service config: Disable w3p_lighthouse-beacon.service
+[2024-11-20 15:33:46 CET] - Attempting to sync with server: https://sync.invis.tools
+[2024-11-20 15:33:47 CET] - Service config: Enable w3p_nimbus-beacon.service
+[2024-11-20 15:33:48 CET] - start unattended-upgrades.service
+[2024-11-20 15:33:48 CET] - Average ping = 7.400 ms
+[2024-11-20 15:33:50 CET] - 
+[2024-11-20 15:33:50 CET] - STAGE 100: END install.sh exit 0
+[2024-11-20 15:33:51 CET] - 
+[2024-11-20 15:33:51 CET] - 
+[2024-11-20 15:33:51 CET] - STAGE 100: rc.local exit 0
+[2024-11-20 15:33:51 CET] - 
+[2024-11-20 15:33:51 CET] - 
+[2024-11-20 15:33:51 CET] - STAGE 100: Installation completed
+[2024-11-20 15:33:51 CET] - 
+[2024-11-20 15:36:30 CET] - horizon=9383904 
+[2024-11-20 15:36:30 CET] - Sync successful with server: https://sync.invis.tools 
+[2024-11-20 15:36:30 CET] - Run Nimbus beacon node
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - [2024-11-20 15:33:24 CET] - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START - RC.LOCAL START
+Checking internet connection
+[2024-11-20 15:33:24 CET] - [2024-11-20 15:33:24 CET] - 
+Checking internet connection
+[2024-11-20 15:33:24 CET] - [2024-11-20 15:33:24 CET] - [1A[K Wed Nov 20 15:33:24 CET 2024: test connection [0/10] - github.com
+-e \e[1A\e[K Wed Nov 20 15:33:24 CET 2024: test connection [0/10] - github.com
+[2024-11-20 15:33:24 CET] - Local time: Wed 2024-11-20 15:33:24 CET
+[2024-11-20 15:33:24 CET] - Universal time: Wed 2024-11-20 14:33:24 UTC
+[2024-11-20 15:33:24 CET] - RTC time: Thu 1970-01-01 00:00:24
+[2024-11-20 15:33:24 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:33:24 CET] - System clock synchronized: no
+[2024-11-20 15:33:24 CET] - NTP service: active
+[2024-11-20 15:33:24 CET] - RTC in local TZ: no
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - STAGE 100: rc.local - started
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - STAGE 100: Checking internet connection
+[2024-11-20 15:33:24 CET] - 
+[2024-11-20 15:33:24 CET] - [1A[K Wed Nov 20 15:33:24 CET 2024: test connection [0/10] - github.com
+[2024-11-20 15:33:30 CET] - [2024-11-20 15:33:30 CET] - Wed Nov 20 15:33:30 CET 2024: Connected - github.com
+Wed Nov 20 15:33:30 CET 2024: Connected - github.com
+[2024-11-20 15:33:30 CET] - exec_url = http://localhost:8551
+[2024-11-20 15:33:30 CET] - geth_port = 30303
+[2024-11-20 15:33:30 CET] - nimbus_port = 9000
+[2024-11-20 15:33:30 CET] - Run Geth
+[2024-11-20 15:33:30 CET] - nimbus_dir = /mnt/storage/.nimbus/data/shared_mainnet_0
+[2024-11-20 15:33:30 CET] - Wed Nov 20 15:33:30 CET 2024: Connected - github.com
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - STAGE 100: rc.local - Run installation script
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START - Web3 Pi install.sh START
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - Local time: Wed 2024-11-20 15:33:30 CET
+[2024-11-20 15:33:30 CET] - Universal time: Wed 2024-11-20 14:33:30 UTC
+[2024-11-20 15:33:30 CET] - RTC time: Thu 1970-01-01 00:00:30
+[2024-11-20 15:33:30 CET] - Time zone: Europe/Warsaw (CET, +0100)
+[2024-11-20 15:33:30 CET] - System clock synchronized: no
+[2024-11-20 15:33:30 CET] - NTP service: active
+[2024-11-20 15:33:30 CET] - RTC in local TZ: no
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - STAGE 100: install.sh - start
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - STAGE 100: Run HTTP status service
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - STAGE 100: Not First Run - READ CONFIG FROM CONFIG.TXT
+[2024-11-20 15:33:30 CET] - 
+[2024-11-20 15:33:30 CET] - Read custom settings from /boot/firmware/config.txt - [Web3Pi] tag
+[2024-11-20 15:33:30 CET] - Service config: Enable influxdb.service
+[2024-11-20 15:33:32 CET] - Service config: Enable grafana-server.service
+[2024-11-20 16:01:53 CET] - Service config: Enable w3p_bsm.service
+[2024-11-20 16:01:53 CET] - Service config: Enable w3p_bnm.service
+[2024-11-20 16:01:54 CET] - Service config: Enable w3p_geth.service
+[2024-11-20 16:01:54 CET] - Service config: Disable w3p_lighthouse-beacon.service
+[2024-11-20 16:01:55 CET] - Service config: Enable w3p_nimbus-beacon.service
+[2024-11-20 16:01:55 CET] - start unattended-upgrades.service
+[2024-11-20 16:01:57 CET] - 
+[2024-11-20 16:01:57 CET] - STAGE 100: END install.sh exit 0
+[2024-11-20 16:01:57 CET] - 
+[2024-11-20 16:01:57 CET] - 
+[2024-11-20 16:01:57 CET] - STAGE 100: rc.local exit 0
+[2024-11-20 16:01:57 CET] - 
+[2024-11-20 16:01:57 CET] - 
+[2024-11-20 16:01:57 CET] - STAGE 100: Installation completed
+[2024-11-20 16:01:57 CET] - 
+[2024-11-20 16:02:04 CET] - Attempting to sync with server: https://sync.invis.tools
+[2024-11-20 16:02:06 CET] - Average ping = 8.441 ms
+[2024-11-20 16:02:21 CET] - horizon=9384110 
+[2024-11-20 16:02:21 CET] - Sync successful with server: https://sync.invis.tools 
+[2024-11-20 16:02:21 CET] - Run Nimbus beacon node

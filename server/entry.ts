@@ -8,7 +8,6 @@ const server = Bun.serve({
     const url = new URL(req.url);
     if (url.pathname.startsWith("/api/")) {
       const res = await handleApiRequest(req);
-      res.headers.set("Content-Type", "application/json");
       res.headers.set("Access-Control-Allow-Origin", "*");
       return res;
     }

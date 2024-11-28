@@ -1,4 +1,4 @@
-import { AlertCircle, Plug, Unplug } from "lucide-react";
+import { AlertCircle, ExternalLinkIcon, Plug, Unplug } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { StageAccordion } from "./StageAccordion";
 import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
@@ -7,7 +7,7 @@ import { Skeleton } from "./ui/skeleton";
 import { useIp } from "@/hooks/useIp";
 import { useUptime } from "@/hooks/useUptime";
 import { useConnection } from "@/hooks/useConnection";
-import { useLogs } from "@/hooks/useLogs";
+import { useStages } from "@/hooks/useStages";
 import { secondsToHumanReadable } from "@/lib/time";
 
 export function Status() {
@@ -17,9 +17,11 @@ export function Status() {
   const { failureReason } = useConnection();
   const connectionIsFailing = !!failureReason;
 
-  const { data: logs } = useLogs();
-  const stageWithError = logs?.find((stage) => stage.status === "error");
-  const installationComplete = logs?.every((stage) => stage.status === "done");
+  const { data: stages } = useStages();
+  const stageWithError = stages?.find((stage) => stage.status === "error");
+  const installationComplete = stages?.every(
+    (stage) => stage.status === "done"
+  );
   return (
     <section className="flex flex-col md:grid  grid-cols-3 gap-4 w-full">
       <Card>
@@ -118,11 +120,21 @@ export function Status() {
 
       <Card className="col-span-3">
         <CardHeader>
-          <CardTitle>Installation progress</CardTitle>
+          <div className="flex gap-1 justify-between">
+            <CardTitle>Installation progress</CardTitle>
+            <a
+              href="/api/logs"
+              target="_blank"
+              className="underline inline-flex gap-1 items-center leading-none"
+            >
+              View raw logs
+              <ExternalLinkIcon className="h-4 w-4" />
+            </a>
+          </div>
         </CardHeader>
         <CardContent>
-          {logs ? (
-            logs.map((stage) => (
+          {stages ? (
+            stages.map((stage) => (
               <StageAccordion key={stage.number} {...stage} />
             ))
           ) : (

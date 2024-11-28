@@ -1,5 +1,10 @@
 import { fetchApi } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
+import { z } from "zod";
+
+const schema = z.object({
+  hostname: z.string(),
+});
 
 export function useHostname() {
   return useQuery({
@@ -7,7 +12,7 @@ export function useHostname() {
     queryFn: async () => {
       const response = await fetchApi("/hostname");
       const json = await response.json();
-      return json.hostname;
+      return schema.parse(json).hostname;
     },
   });
 }

@@ -20,11 +20,11 @@ const schema = z.array(
 export type Stage = TypeOf<typeof schema>[number];
 export type Log = Stage["logs"][number];
 
-export function useLogs() {
+export function useStages() {
   return useQuery({
     queryKey: ["stages"],
     queryFn: async () => {
-      const response = await fetchApi("/logs");
+      const response = await fetchApi("/stages");
       return schema.parse(await response.json());
     },
     refetchInterval: 1000,

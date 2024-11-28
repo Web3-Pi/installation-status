@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import { Log, Stage } from "@/hooks/useLogs";
+import { Log, Stage } from "@/hooks/useStages";
 
 function StageItem({ level, status, isDone, time }: Log & { isDone: boolean }) {
   const textColor =

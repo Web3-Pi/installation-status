@@ -1,5 +1,5 @@
 import { useIp } from "./useIp";
-import { useLogs } from "./useLogs";
+import { useStages } from "./useStages";
 import { useUptime } from "./useUptime";
 
 /**
@@ -7,7 +7,7 @@ import { useUptime } from "./useUptime";
  * device has been up and running for at least 3 minutes
  */
 export function useEnableExternalLink() {
-  const { data: logs } = useLogs();
+  const { data: logs } = useStages();
   const { data: ip } = useIp();
   const { data: uptime } = useUptime();
   const isInstallationComplete = logs?.every(

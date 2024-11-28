@@ -2,6 +2,14 @@ import { networkInterfaces } from "os";
 import { NotFoundError } from "./error";
 import { z } from "zod";
 
+if (!Bun.env.LOG_PATH) {
+  console.log("LOG_PATH not specified, using /var/log/web3pi.log");
+}
+
+if (!Bun.env.JLOG_PATH) {
+  console.log("JLOG_PATH not specified, using /opt/web3pi/status.jlog");
+}
+
 async function getUptime() {
   const systemUptime = await Bun.file("/proc/uptime").text();
   const uptime = parseFloat(systemUptime.split(" ")[0]);
@@ -45,11 +53,9 @@ const schema = z.array(
   })
 );
 
-async function getLogs() {
-  if (!Bun.env.LOG_FILE) {
-    throw new Error("LOG_FILE env var not set");
-  }
-  const rawLogs = await Bun.file(Bun.env.LOG_FILE).text();
+async function getStages() {
+  const filePath = Bun.env.JLOG_PATH || "/opt/web3pi/status.jlog";
+  const rawLogs = await Bun.file(filePath).text();
   const logs = rawLogs
     .split("\n")
     .filter((line) => line.trim() !== "")
@@ -106,6 +112,12 @@ async function getLogs() {
   ];
 }
 
+async function getLogs() {
+  const filePath = Bun.env.LOG_PATH || "/var/log/web3pi.log";
+  const rawLogs = await Bun.file(filePath).text();
+  return rawLogs;
+}
+
 export async function handleApiRequest(req: Request) {
   const url = new URL(req.url);
   const route = url.pathname.replace("/api", "");
@@ -113,13 +125,25 @@ export async function handleApiRequest(req: Request) {
     case "/health":
       return new Response(JSON.stringify("OK"));
     case "/uptime":
-      return new Response(JSON.stringify({ uptime: await getUptime() }));
+      return new Response(JSON.stringify({ uptime: await getUptime() }), {
+        headers: { "Content-Type": "application/json" },
+      });
     case "/ip":
-      return new Response(JSON.stringify({ ip: await getIp() }));
+      return new Response(JSON.stringify({ ip: await getIp() }), {
+        headers: { "Content-Type": "application/json" },
+      });
     case "/hostname":
-      return new Response(JSON.stringify({ hostname: await getHostname() }));
+      return new Response(JSON.stringify({ hostname: await getHostname() }), {
+        headers: { "Content-Type": "application/json" },
+      });
+    case "/stages":
+      return new Response(JSON.stringify(await getStages()), {
+        headers: { "Content-Type": "application/json" },
+      });
     case "/logs":
-      return new Response(JSON.stringify(await getLogs()));
+      return new Response(await getLogs(), {
+        headers: { "Content-Type": "text/plain" },
+      });
     default:
       return new Response("Not found", { status: 404 });
   }

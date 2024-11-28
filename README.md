@@ -33,8 +33,11 @@ This will first build the web application to static html js and css files, and t
 To start the application run:
 
 ```bash
-PORT=80 LOG_FILE=/path/to/status.log ./app
+PORT=80 LOG_PATH=/path/to/status.txt JLOG_PATH=/path/to/installation.jlog ./app
 ```
 
-If port is not specified it will default to `3000`
-If LOG_FILE is not specified the /log endpoint will throw a 500 error
+If `PORT` is not specified it will default to `3000`
+
+If `LOG_PATH` is not specified it will default to `/var/log/web3pi.log`
+
+If `JLOG_PATH` is not specified it will default to `/opt/web3pi/status.jlog`

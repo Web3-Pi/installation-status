@@ -1,5 +1,10 @@
 import { fetchApi } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
+import { z } from "zod";
+
+const schema = z.object({
+  ip: z.string(),
+});
 
 export function useIp() {
   return useQuery({
@@ -7,7 +12,7 @@ export function useIp() {
     queryFn: async () => {
       const response = await fetchApi("/ip");
       const json = await response.json();
-      return json.ip;
+      return schema.parse(json).ip;
     },
   });
 }
