@@ -10,11 +10,12 @@ import { useConnection } from "@/hooks/useConnection";
 import { useStages } from "@/hooks/useStages";
 import { secondsToHumanReadable } from "@/lib/time";
 import { Accordion } from "./ui/accordion";
+import { GrafanaCountdown } from "./GrafanaCountdown";
 
 export function Status() {
   const { data: hostname, isLoading: hostnameLoading } = useHostname();
   const { data: ip, isLoading: ipLoading } = useIp();
-  const { data: uptime } = useUptime();
+  const { uptime } = useUptime();
   const { failureReason } = useConnection();
   const connectionIsFailing = !!failureReason;
 
@@ -113,8 +114,7 @@ export function Status() {
           <AlertCircle className="h-4 w-4" />
           <AlertTitle>Installation complete</AlertTitle>
           <AlertDescription>
-            Installation completed successfully. The Grafana dashboard and JSON
-            API will be available in a few minutes.
+            Installation completed successfully. <GrafanaCountdown />
           </AlertDescription>
         </Alert>
       )}

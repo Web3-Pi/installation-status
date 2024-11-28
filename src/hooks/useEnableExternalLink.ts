@@ -9,7 +9,7 @@ import { useUptime } from "./useUptime";
 export function useEnableExternalLink() {
   const { data: logs } = useStages();
   const { data: ip } = useIp();
-  const { data: uptime } = useUptime();
+  const { uptime } = useUptime();
   const isInstallationComplete = logs?.every(
     (stage) => stage.status === "done"
   );

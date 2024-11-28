@@ -1,6 +1,6 @@
 import { ExternalLinkIcon } from "lucide-react";
 import { ButtonProps, Button } from "./ui/button";
-import { useEnableExternalLink } from "@/hooks/useEnableExternalLink";
+import { useIp } from "@/hooks/useIp";
 
 type JsonApiButtonProps = ButtonProps;
 
@@ -8,9 +8,9 @@ export function JsonApiButton({
   disabled: disabledFromProps,
   ...props
 }: JsonApiButtonProps) {
-  const { isEnabled, ip } = useEnableExternalLink();
+  const { data: ip } = useIp();
 
-  if (!isEnabled || disabledFromProps) {
+  if (!ip || disabledFromProps) {
     return (
       <Button disabled {...props}>
         JSON API not available
