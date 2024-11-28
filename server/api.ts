@@ -87,21 +87,15 @@ async function getStages() {
     },
     {
       number: 1,
-      name: "Install HTTP status service",
+      name: "Update firmware",
       logs: logsByStage[1] || [],
       status: getStageStatus(1),
     },
     {
       number: 2,
-      name: "Update firmware",
+      name: "Main installation",
       logs: logsByStage[2] || [],
       status: getStageStatus(2),
-    },
-    {
-      number: 3,
-      name: "Main installation",
-      logs: logsByStage[3] || [],
-      status: getStageStatus(3),
     },
     {
       number: 100,
