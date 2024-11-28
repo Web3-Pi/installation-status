@@ -1,6 +1,6 @@
 import { AlertCircle, ExternalLinkIcon, Plug, Unplug } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { StageAccordion } from "./StageAccordion";
+import { StageAccordion } from "./StageAccordionItem";
 import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
 import { useHostname } from "@/hooks/useHostname";
 import { Skeleton } from "./ui/skeleton";
@@ -9,6 +9,7 @@ import { useUptime } from "@/hooks/useUptime";
 import { useConnection } from "@/hooks/useConnection";
 import { useStages } from "@/hooks/useStages";
 import { secondsToHumanReadable } from "@/lib/time";
+import { Accordion } from "./ui/accordion";
 
 export function Status() {
   const { data: hostname, isLoading: hostnameLoading } = useHostname();
@@ -134,9 +135,11 @@ export function Status() {
         </CardHeader>
         <CardContent>
           {stages ? (
-            stages.map((stage) => (
-              <StageAccordion key={stage.number} {...stage} />
-            ))
+            <Accordion type="multiple" defaultValue={["stage-0"]}>
+              {stages.map((stage) => (
+                <StageAccordion key={stage.number} {...stage} />
+              ))}
+            </Accordion>
           ) : (
             <div className="flex flex-col items-center gap-[1px]">
               <Skeleton className="h-[56px] w-full" />

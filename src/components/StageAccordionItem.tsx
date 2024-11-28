@@ -1,6 +1,5 @@
 import { CheckCircle, Circle, CircleX, Loader2 } from "lucide-react";
 import {
-  Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
@@ -10,6 +9,7 @@ import { Log, Stage } from "@/hooks/useStages";
 function StageItem({ level, status, isDone, time }: Log & { isDone: boolean }) {
   const textColor =
     level === "ERROR" ? "text-red-500" : isDone ? "text-green-500" : "";
+  const textWeight = isDone ? "font-normal" : "font-bold";
 
   const icon =
     level === "ERROR" ? (
@@ -37,7 +37,7 @@ function StageItem({ level, status, isDone, time }: Log & { isDone: boolean }) {
     <li className="flex flex-col sm:flex-row  items-start justify-between">
       <div className="flex gap-2 items-center">
         <span>{icon}</span>
-        <span className={`${textColor}`}>{status}</span>
+        <span className={`${textColor} ${textWeight}`}>{status}</span>
       </div>
       <span className="text-xs">{formattedDate}</span>
     </li>
@@ -60,33 +60,31 @@ export function StageAccordion({ number, name, status, logs }: Stage) {
   }[status];
 
   return (
-    <Accordion type="multiple">
-      <AccordionItem value="item-1">
-        <AccordionTrigger>
-          <div className="flex gap-2 items-center">
-            {icon}
-            <span className={textColor}>
-              Stage {number}: {name}
-            </span>
-          </div>
-        </AccordionTrigger>
-        <AccordionContent>
-          <ul className="flex flex-col gap-5 sm:gap-2">
-            {logs.map((log, index) => (
-              <StageItem
-                key={log.status + index}
-                isDone={status !== "in-progress" || index !== logs.length - 1}
-                {...log}
-              />
-            ))}
-          </ul>
-          {status === "todo" && (
-            <span className="italic text-gray-500">
-              Stage has not started yet
-            </span>
-          )}
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
+    <AccordionItem value={`stage-${number}`}>
+      <AccordionTrigger>
+        <div className="flex gap-2 items-center">
+          {icon}
+          <span className={textColor}>
+            Stage {number}: {name}
+          </span>
+        </div>
+      </AccordionTrigger>
+      <AccordionContent>
+        <ul className="flex flex-col gap-5 sm:gap-2">
+          {logs.map((log, index) => (
+            <StageItem
+              key={log.status + index}
+              isDone={status !== "in-progress" || index !== logs.length - 1}
+              {...log}
+            />
+          ))}
+        </ul>
+        {status === "todo" && (
+          <span className="italic text-gray-500">
+            Stage has not started yet
+          </span>
+        )}
+      </AccordionContent>
+    </AccordionItem>
   );
 }
