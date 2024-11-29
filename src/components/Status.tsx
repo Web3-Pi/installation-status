@@ -1,6 +1,5 @@
-import { AlertCircle, ExternalLinkIcon, Plug, Unplug } from "lucide-react";
+import { AlertCircle, Plug, Unplug } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { StageAccordion } from "./StageAccordionItem";
 import { Alert, AlertTitle, AlertDescription } from "./ui/alert";
 import { useHostname } from "@/hooks/useHostname";
 import { Skeleton } from "./ui/skeleton";
@@ -9,8 +8,10 @@ import { useUptime } from "@/hooks/useUptime";
 import { useConnection } from "@/hooks/useConnection";
 import { useStages } from "@/hooks/useStages";
 import { secondsToHumanReadable } from "@/lib/time";
-import { Accordion } from "./ui/accordion";
 import { GrafanaCountdown } from "./GrafanaCountdown";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { LogsCard } from "./LogsCard";
+import { InstallationCard } from "./InstallationCard";
 
 export function Status() {
   const { data: hostname, isLoading: hostnameLoading } = useHostname();
@@ -118,39 +119,18 @@ export function Status() {
           </AlertDescription>
         </Alert>
       )}
-
-      <Card className="col-span-3">
-        <CardHeader>
-          <div className="flex gap-1 justify-between">
-            <CardTitle>Installation progress</CardTitle>
-            <a
-              href="/api/logs"
-              target="_blank"
-              className="underline inline-flex gap-1 items-center leading-none"
-            >
-              View raw logs
-              <ExternalLinkIcon className="h-4 w-4" />
-            </a>
-          </div>
-        </CardHeader>
-        <CardContent>
-          {stages ? (
-            <Accordion type="multiple" defaultValue={["stage-0"]}>
-              {stages.map((stage) => (
-                <StageAccordion key={stage.number} {...stage} />
-              ))}
-            </Accordion>
-          ) : (
-            <div className="flex flex-col items-center gap-[1px]">
-              <Skeleton className="h-[56px] w-full" />
-              <Skeleton className="h-[56px] w-full" />
-              <Skeleton className="h-[56px] w-full" />
-              <Skeleton className="h-[56px] w-full" />
-              <Skeleton className="h-[56px] w-full" />
-            </div>
-          )}
-        </CardContent>
-      </Card>
+      <Tabs defaultValue="installation" className="col-span-3">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="installation">Installation progress</TabsTrigger>
+          <TabsTrigger value="logs">Logfile contents</TabsTrigger>
+        </TabsList>
+        <TabsContent value="installation">
+          <InstallationCard />
+        </TabsContent>
+        <TabsContent value="logs">
+          <LogsCard />
+        </TabsContent>
+      </Tabs>
     </section>
   );
 }
