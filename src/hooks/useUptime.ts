@@ -1,6 +1,5 @@
 import { fetchApi } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 import { z } from "zod";
 
 const schema = z.object({
@@ -8,25 +7,16 @@ const schema = z.object({
 });
 
 export function useUptime() {
-  const [uptime, setUptime] = useState<number>(0);
-  const { data: serverUptime } = useQuery({
+  const { data: serverUptime, failureCount } = useQuery({
     queryKey: ["uptime"],
     queryFn: async () => {
       const response = await fetchApi("/uptime");
       const json = await response.json();
       return Math.floor(schema.parse(json).uptime);
     },
+    refetchInterval: 1000,
+    retryDelay: 1000,
   });
 
-  useEffect(() => {
-    if (serverUptime) {
-      setUptime(serverUptime);
-    }
-    const interval = setInterval(() => {
-      setUptime((uptime) => uptime + 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [serverUptime]);
-
-  return { uptime };
+  return { uptime: failureCount > 0 ? null : serverUptime };
 }
