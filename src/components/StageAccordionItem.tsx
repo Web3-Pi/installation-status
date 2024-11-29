@@ -37,9 +37,11 @@ function StageItem({ level, status, isDone, time }: Log & { isDone: boolean }) {
     <li className="flex flex-col sm:flex-row  items-start justify-between">
       <div className="flex gap-2 items-center">
         <span>{icon}</span>
-        <span className={`${textColor} ${textWeight}`}>{status}</span>
+        <span className={`${textColor} ${textWeight} font-mono text-xs`}>
+          {status}
+        </span>
       </div>
-      <span className="text-xs">{formattedDate}</span>
+      <div className="text-xs font-mono shrink-0">{formattedDate}</div>
     </li>
   );
 }
@@ -64,7 +66,7 @@ export function StageAccordion({ number, name, status, logs }: Stage) {
       <AccordionTrigger>
         <div className="flex gap-2 items-center">
           {icon}
-          <span className={textColor}>
+          <span className={`${textColor} font-mono`}>
             Stage {number}: {name}
           </span>
         </div>

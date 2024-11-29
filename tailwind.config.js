@@ -5,7 +5,8 @@ export default {
 	theme: {
     	fontFamily: {
     		display: 'Outfit',
-    		body: 'DM Sans'
+			body: 'DM Sans',
+			mono: 'Geist Mono'
     	},
     	extend: {
     		borderRadius: {
