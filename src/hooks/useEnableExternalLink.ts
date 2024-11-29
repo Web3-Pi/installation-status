@@ -10,14 +10,11 @@ export function useEnableExternalLink() {
   const { data: logs } = useStages();
   const { data: ip } = useIp();
   const { uptime } = useUptime();
-  const isInstallationComplete = logs?.every(
-    (stage) => stage.status === "done"
-  );
+  const isInstallationComplete =
+    !!logs && logs.every((stage) => stage.status === "done");
   const hasIp = !!ip;
-  const isUptimeEnough = !!uptime && uptime > 180;
-  const isEnabled = hasIp && !!isInstallationComplete && isUptimeEnough;
+  const isUptimeEnough = !!uptime && uptime >= 180;
   return {
-    isEnabled,
     isInstallationComplete,
     hasIp,
     isUptimeEnough,

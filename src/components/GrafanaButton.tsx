@@ -8,7 +8,10 @@ export function GrafanaButton({
   disabled: disabledFromProps,
   ...props
 }: GrafanaButtonProps) {
-  const { isEnabled, ip } = useEnableExternalLink();
+  const { ip, isInstallationComplete, isUptimeEnough } =
+    useEnableExternalLink();
+
+  const isEnabled = isInstallationComplete && isUptimeEnough && !!ip;
 
   if (!isEnabled || disabledFromProps) {
     return (
