@@ -1,5 +1,8 @@
 # Installation status page
 
+This repository provides a comprehensive tool for tracking the installation status of Web3 Pi image, offering real-time updates and detailed logs.
+
+
 ![screenshot of the installation status page](image.png)
 
 ## Development
