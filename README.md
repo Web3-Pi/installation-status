@@ -1,5 +1,7 @@
 # Installation status page
 
+![screenshot of the installation status page](image.png)
+
 ## Development
 
 Make sure you have [bun](https://bun.sh/) installed before running the following commands:
