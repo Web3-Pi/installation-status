@@ -85,11 +85,12 @@
     grid-template-areas:
       "logo dark-mode"
       "grafana grafana"
-      "json-api json-api";
+      "json-api json-api"
+      "cockpit cockpit";
   }
   .header-grid-desktop {
     display: grid;
     grid-template-columns: 1fr min-content min-content min-content;
-    grid-template-areas: "logo grafana json-api dark-mode";
+    grid-template-areas: "logo grafana json-api cockpit dark-mode";
   }
 }

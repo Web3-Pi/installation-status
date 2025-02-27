@@ -4,6 +4,7 @@ import { Status } from "./components/Status";
 import { useDarkMode } from "./hooks/useDarkMode";
 import { GrafanaButton } from "./components/GrafanaButton";
 import { JsonApiButton } from "./components/JsonApiButton";
+import { CockpitButton } from "./components/CockpitButton";
 
 function App() {
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -17,7 +18,7 @@ function App() {
           <a
             href="https://web3pi.io"
             target="_blank"
-            className="[grid-area:logo]"
+            className="[grid-area:logo]" rel="noreferrer"
           >
             <img
               src={darkMode ? "web3pi_white.svg" : "web3pi.svg"}
@@ -27,6 +28,7 @@ function App() {
           </a>
           <GrafanaButton className="[grid-area:grafana]" />
           <JsonApiButton className="[grid-area:json-api]" />
+          <CockpitButton className="[grid-area:cockpit]" />
           <Button onClick={toggleDarkMode} className="[grid-area:dark-mode]">
             {darkMode ? <SunIcon /> : <MoonIcon />}
           </Button>
