@@ -1,4 +1,4 @@
-import { networkInterfaces } from "os";
+import { networkInterfaces } from "node:os";
 import { NotFoundError } from "./error";
 import { z } from "zod";
 
@@ -12,7 +12,7 @@ if (!Bun.env.JLOG_PATH) {
 
 async function getUptime() {
   const systemUptime = await Bun.file("/proc/uptime").text();
-  const uptime = parseFloat(systemUptime.split(" ")[0]);
+  const uptime = Number.parseFloat(systemUptime.split(" ")[0]);
   return uptime;
 }
 
@@ -106,9 +106,11 @@ async function getStages() {
   ];
 }
 
-async function getLogs() {
+async function getLogs(lines?: number) {
   const filePath = Bun.env.LOG_PATH || "/var/log/web3pi.log";
-  const rawLogs = await Bun.file(filePath).text();
+  const rawLogs = lines
+    ? (await Bun.$`tail -n ${lines} ${filePath}`).stdout.toString()
+    : await Bun.file(filePath).text();
   return rawLogs;
 }
 
@@ -134,10 +136,13 @@ export async function handleApiRequest(req: Request) {
       return new Response(JSON.stringify(await getStages()), {
         headers: { "Content-Type": "application/json" },
       });
-    case "/logs":
-      return new Response(await getLogs(), {
+    case "/logs": {
+      const linesParam = url.searchParams.get("lines");
+      const lines = linesParam ? Number.parseInt(linesParam) : undefined;
+      return new Response(await getLogs(lines), {
         headers: { "Content-Type": "text/plain" },
       });
+    }
     default:
       return new Response("Not found", { status: 404 });
   }

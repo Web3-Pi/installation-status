@@ -12,7 +12,7 @@ export function LogsCard() {
     <Card>
       <CardHeader>
         <div className="flex gap-2 justify-between">
-          <CardTitle>Logfile contents</CardTitle>
+          <CardTitle>Logfile contents (last 5000 lines shown)</CardTitle>
           <div className="flex gap-4">
             <div className="flex items-center space-x-2">
               <Switch
@@ -26,6 +26,7 @@ export function LogsCard() {
               href="/api/logs"
               target="_blank"
               className="underline inline-flex gap-1 items-center"
+              rel="noreferrer"
             >
               Open in new tab
               <ExternalLinkIcon className="h-4 w-4" />
