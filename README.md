@@ -2,7 +2,6 @@
 
 This repository provides a comprehensive tool for tracking the installation status of Web3 Pi image, offering real-time updates and detailed logs.
 
-
 ![screenshot of the installation status page](image.png)
 
 ## Development
@@ -32,6 +31,11 @@ bun run build
 ```
 
 This will first build the web application to static html js and css files, and then bundle them into a single executable. This will result in a file called `app` containing the static files, server code and javascript runtime.
+
+### Compatibility note
+
+Bun introduced a breaking change in version 1.2 that messes with the bundling process. It's recommended to use bun 1.1.45 to build the application.
+Either downgrade your bun version or use the `build:docker` command to build the application in a docker container with the correct bun version.
 
 ## Run in production
 

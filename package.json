@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "LOG_PATH=./test-data/log.txt JLOG_PATH=./test-data/installation.jlog bunx concurrently \"bunx --bun vite\" \"bun run --watch --no-clear-screen server/entry.ts\"",
     "build": "tsc -b && vite build && bun build --compile --minify --sourcemap --asset-naming=\"[dir]/[name].[ext]\" server/entry.ts dist/**/*.* dist/*.*  --outfile app --target=bun-linux-arm64",
+    "build:docker": "docker run --rm -v $(pwd):/app -w /app oven/bun:1.1.45 sh -c \"bun install && bun run build\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },
